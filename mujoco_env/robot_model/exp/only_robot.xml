@@ -1,0 +1,27 @@
+<mujoco model="robot_arm">
+    <compiler angle="radian" meshdir="../robot/meshes/" />
+    <size njmax="500" nconmax="100" />
+
+    <!-- 加载环境基本配置 -->
+    <include file="only_robot_assets.xml"></include>
+
+    <!-- 加载机械臂模型与基本配置、驱动 -->
+    <include file="../robot/robot_arm/robot_arm620_assets.xml"></include>
+
+    <!-- 加载大寰夹爪资源定义 -->
+    <include file="../robot/dahuan_gripper/dahuan-gripper-assets.xml"></include>
+
+    <!-- 加载 Robotiq-2f-85 夹爪与基本配置、驱动 -->
+    <!-- <include file="../robot/robot_iq/robotiq-2f-assets.xml"></include> -->
+    
+    <!-- 机器人本体 -->
+    <worldbody>
+        <light diffuse="0.3 0.3 0.3" pos="0 -0.3 10" dir="0 0.2 -0.8" directional="true"/>
+        <!-- <light cutoff="100" diffuse="0.5 0.5 0.5" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1"/> -->
+        <geom name="groundplane" size="0 0 2.5" type="plane" material="MatGnd"/>
+
+        <!-- 加载机器人运动链 -->
+        <include file="../robot/robot_arm/robot_arm620_dahuan.xml"></include>
+
+    </worldbody>
+</mujoco>

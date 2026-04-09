@@ -1,0 +1,76 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: mcap
+  duration:
+    nanoseconds: 38278465500
+  starting_time:
+    nanoseconds_since_epoch: 1775469229271481724
+  message_count: 9008
+  topics_with_message_count:
+  - topic_metadata:
+      name: /joint_cmd
+      type: sensor_msgs/msg/JointState
+      serialization_format: cdr
+      offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability:\
+        \ 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions:\
+        \ false"
+    message_count: 8
+  - topic_metadata:
+      name: /ee_camera/rgb/image_raw
+      type: sensor_msgs/msg/Image
+      serialization_format: cdr
+      offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability:\
+        \ 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions:\
+        \ false\n- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n\
+        \    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec:\
+        \ 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+    message_count: 499
+  - topic_metadata:
+      name: /joint_states
+      type: sensor_msgs/msg/JointState
+      serialization_format: cdr
+      offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability:\
+        \ 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions:\
+        \ false"
+    message_count: 7845
+  - topic_metadata:
+      name: /external_camera/rgb/image_raw
+      type: sensor_msgs/msg/Image
+      serialization_format: cdr
+      offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability:\
+        \ 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions:\
+        \ false\n- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n\
+        \    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec:\
+        \ 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+    message_count: 499
+  - topic_metadata:
+      name: /gripper_status
+      type: std_msgs/msg/String
+      serialization_format: cdr
+      offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability:\
+        \ 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n\
+        \    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions:\
+        \ false"
+    message_count: 157
+  compression_format: ''
+  compression_mode: ''
+  relative_file_paths:
+  - teaching_20260406_175349_0.mcap
+  files:
+  - path: teaching_20260406_175349_0.mcap
+    starting_time:
+      nanoseconds_since_epoch: 1775469229271481724
+    duration:
+      nanoseconds: 38278465500
+    message_count: 9008

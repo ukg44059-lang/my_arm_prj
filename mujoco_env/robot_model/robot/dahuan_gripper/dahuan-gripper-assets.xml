@@ -1,0 +1,43 @@
+<mujocoinclude>
+<!-- =================================================
+    Dahuan Gripper Assets and Configuration
+    Mesh definitions, materials, actuators
+====================================================== -->
+
+    <compiler angle="radian"/>
+    <option timestep="0.002"/>
+
+    <asset>
+        <mesh name="dahuan-gripper-base"  file="dahuan_gripper/gripper_link.STL" />
+        <mesh name="dahuan-finger1"       file="dahuan_gripper/finger1_Link.STL" />
+        <mesh name="dahuan-finger2"       file="dahuan_gripper/finger2_Link.STL" />
+    </asset>
+
+    <default>
+        <default class="dahuangripper">
+            <joint damping="10" pos="0 0 0" axis="1 0 0" limited="true" type="slide"/>
+            <geom rgba=".8 .8 .8 1" type="mesh" contype="0" conaffinity="0" group="1"/>
+            <default class="dahuan_col">
+                <geom rgba=".5 .5 .5 1" type="mesh" contype="0" conaffinity="0" group="3"/>
+            </default>
+            <default class="dahuan_pad_col">
+                <geom rgba=".3 .3 .3 1" type="box" contype="1" conaffinity="1" group="3" condim="6" friction="3.0 0.1 0.01" solimp="0.95 0.99 0.001" solref="0.005 1.5"/>
+            </default>
+        </default>
+    </default>
+
+    <sensor>
+        <jointpos name="dahuan_gripper_sensor" joint="dahuan_finger1_joint"/>
+    </sensor>
+
+    <!-- Two fingers mimic each other -->
+    <equality>
+        <joint joint1="dahuan_finger1_joint" joint2="dahuan_finger2_joint"/>
+    </equality>
+
+    <!-- Actuator: controls finger1, finger2 follows via equality constraint -->
+    <actuator>
+        <position name="dahuan_gripper" joint="dahuan_finger1_joint" ctrlrange="0 0.025" ctrllimited="true" kp="50"/>
+    </actuator>
+
+</mujocoinclude>

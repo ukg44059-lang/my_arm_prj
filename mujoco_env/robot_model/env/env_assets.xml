@@ -1,0 +1,12 @@
+<mujocoinclude>
+    <asset>
+        <texture name="lab_floor_tex" type="2d" file="../assets/marble.png" height="512" width="512"/>
+        <material name="lab_floor_mat" texture="lab_floor_tex" texrepeat="4 4" specular="0.1" shininess="0.2"/>
+
+        <texture name="desktop_tex" type="2d" file="../assets/desktop.png" height="512" width="512"/>
+        <material name="desktop_mat" texture="desktop_tex" texrepeat="1 1" specular="0.1" shininess="0.2"/>
+
+        <texture name="white_wall_tex" type="2d" file="../assets/white_wall.png" height="512" width="512"/>
+        <material name="white_wall_mat" texture="white_wall_tex" texrepeat="128 128" specular="0.1" shininess="0.2"/>
+    </asset>
+</mujocoinclude>

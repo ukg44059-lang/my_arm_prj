@@ -1,0 +1,163 @@
+{
+  "approach": {
+    "frame_count": 7845,
+    "duration": 38.27846550941467,
+    "overall_jerk": 18.589044457159048,
+    "jerk_per_joint": [
+      1.0024546754468169,
+      8.02653145539968,
+      30.856842314456227,
+      10.035142058933321,
+      59.25397281540695,
+      2.359323423311167
+    ],
+    "jerk_score_per_joint": [
+      99.33169688303546,
+      94.64897902973355,
+      79.42877179036252,
+      93.30990529404446,
+      60.497351456395364,
+      98.42711771779256
+    ],
+    "severe_jitter": false,
+    "severe_jitter_count": 0,
+    "end_vel_norm": 1.0683431940994319e-05,
+    "effort_rms": [
+      0.01082069087436295,
+      7.978447586052701,
+      6.7648545874979025,
+      0.05170104061062574,
+      1.1221881411213308,
+      0.0010760669320582531
+    ],
+    "effort_rms_mean": 7.1942707091595395,
+    "score_smoothness": 87.6073036952273,
+    "score_stability": 99.99643885601967,
+    "score_effort": 91.00716161355058,
+    "score_total": 92.79346548108545
+  },
+  "grasping": {
+    "frame_count": 0,
+    "duration": 0.0,
+    "overall_jerk": 0.0,
+    "jerk_per_joint": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "jerk_score_per_joint": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "severe_jitter": false,
+    "severe_jitter_count": 0,
+    "end_vel_norm": 0.0,
+    "effort_rms": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "effort_rms_mean": 0.0,
+    "score_smoothness": 0.0,
+    "score_stability": 0.0,
+    "score_effort": 0.0,
+    "score_total": 0.0
+  },
+  "transport": {
+    "frame_count": 0,
+    "duration": 0.0,
+    "overall_jerk": 0.0,
+    "jerk_per_joint": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "jerk_score_per_joint": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "severe_jitter": false,
+    "severe_jitter_count": 0,
+    "end_vel_norm": 0.0,
+    "effort_rms": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "effort_rms_mean": 0.0,
+    "score_smoothness": 0.0,
+    "score_stability": 0.0,
+    "score_effort": 0.0,
+    "score_total": 0.0
+  },
+  "release": {
+    "frame_count": 0,
+    "duration": 0.0,
+    "overall_jerk": 0.0,
+    "jerk_per_joint": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "jerk_score_per_joint": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "severe_jitter": false,
+    "severe_jitter_count": 0,
+    "end_vel_norm": 0.0,
+    "effort_rms": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "effort_rms_mean": 0.0,
+    "score_smoothness": 0.0,
+    "score_stability": 0.0,
+    "score_effort": 0.0,
+    "score_total": 0.0
+  },
+  "config": {
+    "REF_JERK_MAX": 150.0,
+    "REF_END_VEL_MAX": 0.3,
+    "REF_EFFORT_MAX_PCT": 80.0,
+    "REF_RMSE_MAX": 0.12,
+    "REF_STD_MAX": 0.08,
+    "SEVERE_JITTER_SCORE_THRESHOLD": 50.0,
+    "SEVERE_JITTER_PENALTY_POINTS": 10.0
+  },
+  "overall_score_raw": 92.79346548108545,
+  "jitter_penalty_count": 0,
+  "jitter_penalty_points": 0.0,
+  "overall_score": 92.79346548108545
+}

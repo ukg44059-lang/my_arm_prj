@@ -1,0 +1,69 @@
+# PID Controller Configuration for 6-DOF Robot Arm
+# 六自由度机械臂PID控制器配置文件
+#
+# 每个关节的PID参数可独立配置
+# Joint ordering: [Joint1, Joint2, Joint3, Joint4, Joint5, Joint6]
+# 关节顺序: [关节1, 关节2, 关节3, 关节4, 关节5, 关节6]
+
+# Global settings
+global:
+  use_gravity_compensation: true
+  gravity_scale: 1.2
+  dt: 0.001  # Time step in seconds
+
+# Individual joint PID gains
+# 单独的关节PID增益
+joints:
+  - name: "Joint1"
+    index: 0
+    kp: 180.0   # Proportional gain (比例增益)
+    kd: 10.0    # Derivative gain (微分增益)
+    ki: 0.0     # Integral gain (积分增益)
+    description: "Base rotation joint - requires high stiffness"
+
+  - name: "Joint2"
+    index: 1
+    kp: 120.0
+    kd: 30.0
+    ki: 0.0
+    description: "Shoulder joint - supports arm weight"
+
+  - name: "Joint3"
+    index: 2
+    kp: 70.0
+    kd: 10.0
+    ki: 0.0
+    description: "Elbow joint"
+
+  - name: "Joint4"
+    index: 3
+    kp: 35.0
+    kd: 6.0
+    ki: 0.0
+    description: "Wrist roll"
+
+  - name: "Joint5"
+    index: 4
+    kp: 25.0
+    kd: 6.0
+    ki: 0.0
+    description: "Wrist pitch"
+
+  - name: "Joint6"
+    index: 5
+    kp: 25.0
+    kd: 6.0
+    ki: 0.0
+    description: "Wrist yaw - end effector orientation"
+
+# Integral term limits (防止积分饱和)
+integral_limits:
+  min: -1.0
+  max: 1.0
+
+# Tuning guidelines (调参指南):
+# - 增加 Kp: 提高响应速度，但可能导致震荡
+# - 增加 Kd: 增加阻尼，减少震荡
+# - 增加 Ki: 消除稳态误差，但可能引起震荡
+# - 基座关节(Joint1-3)通常需要更高的增益
+# - 末端关节(Joint4-6)通常需要更低的增益以避免高频震荡

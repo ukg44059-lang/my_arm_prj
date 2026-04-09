@@ -1,0 +1,39 @@
+<mujoco model="robot_arm">
+    <compiler angle="radian" meshdir="../robot/meshes/" />
+    <size njmax="500" nconmax="100" />
+    <visual>
+    <global offwidth="1280" offheight="720"/>
+    </visual>
+    <!-- 加载环境基本配置 -->
+    <include file="env_robot_assets.xml"></include>
+
+    <!-- 加载机械臂模型与基本配置、驱动 -->
+    <include file="../robot/robot_arm/robot_arm620_assets.xml"></include>
+
+    <!-- 加载 Robotiq-2f-85 夹爪与基本配置、驱动 -->
+    <include file="../robot/robot_iq/robotiq-2f-assets.xml"></include>
+
+    <!-- 加载 实验环境材料 -->
+    <include file="../env/exp_assets.xml"></include>
+
+    <!-- 机器人本体 -->
+    <worldbody>
+        <!-- 默认光照 -->
+        <light directional="true" diffuse="0.8 0.8 0.8" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
+        <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5" dir="0 0 -1"/>
+
+        <!-- 经典地板（棋盘格纹理） -->
+        <geom name="floor" size="1 1 0.1" type="plane" material="groundplane"/>
+
+        <!-- RGBD相机 2: 固定在机器人正前方的外部观察相机 -->
+        <body name="external_camera_mount" pos="0.8 0 0.5">
+            <camera name="rgbd_camera_external" pos="0 0 0" euler="0 1.57079632679 1.57079632679" fovy="70" mode="fixed"/>
+            <!-- 添加一个小的可视化标记，表示相机位置 -->
+            <geom name="camera_marker" type="box" size="0.01 0.01 0.01" rgba="0 0 1 0.5"/>
+        </body>
+
+        <!-- 加载机器人运动链 -->
+        <include file="../robot/robot_arm/robot_arm620_robot_iq.xml"></include>
+
+    </worldbody>
+</mujoco>

@@ -1,0 +1,56 @@
+<mujocoinclude>
+    <!-- 加载机械臂模型与基本配置 -->
+    <asset>
+        <mesh name="base_link" file="arm620/base_link.STL"/>
+        <mesh name="Link1" file="arm620/Link1.STL"/>
+        <mesh name="Link2" file="arm620/Link2.STL"/>
+        <mesh name="Link3" file="arm620/Link3.STL"/>
+        <mesh name="Link4" file="arm620/Link4.STL"/>
+        <mesh name="Link5" file="arm620/Link5.STL"/>
+        <mesh name="Link6" file="arm620/Link6.STL"/>
+    </asset>
+    <default>
+	  <default class="orz">
+	  </default>
+    </default>
+
+    <!-- 机械臂驱动（力矩/电机控制模式） -->
+    <!--
+    前三个关节：49 Nm
+    后三个关节：9 Nm
+    -->
+    <actuator>
+        <!-- 前三个关节：49 Nm -->
+        <motor joint='joint1' name='joint1_motor' ctrllimited="true" ctrlrange="-49 49" gear="1"/>
+        <motor joint='joint2' name='joint2_motor' ctrllimited="true" ctrlrange="-49 49" gear="1"/>
+        <motor joint='joint3' name='joint3_motor' ctrllimited="true" ctrlrange="-49 49" gear="1"/>
+        <!-- 后三个关节：9 Nm -->
+        <motor joint='joint4' name='joint4_motor' ctrllimited="true" ctrlrange="-9 9" gear="1"/>
+        <motor joint='joint5' name='joint5_motor' ctrllimited="true" ctrlrange="-9 9" gear="1"/>
+        <motor joint='joint6' name='joint6_motor' ctrllimited="true" ctrlrange="-9 9" gear="1"/>
+    </actuator>
+
+    <!-- 机械臂传感器 -->
+    <sensor>
+        <jointpos name="pos_sensor1" joint="joint1" />
+        <jointvel name="vel_sensor1" joint="joint1" />
+        <jointpos name="pos_sensor2" joint="joint2" />
+        <jointvel name="vel_sensor2" joint="joint2" />
+        <jointpos name="pos_sensor3" joint="joint3" />
+        <jointvel name="vel_sensor3" joint="joint3" />
+        <jointpos name="pos_sensor4" joint="joint4" />
+        <jointvel name="vel_sensor4" joint="joint4" />
+        <jointpos name="pos_sensor5" joint="joint5" />
+        <jointvel name="vel_sensor5" joint="joint5" />
+        <jointpos name="pos_sensor6" joint="joint6" />
+        <jointvel name="vel_sensor6" joint="joint6" />
+        <!-- 关节扭矩传感器 -->
+        <actuatorfrc name="tau_sensor1" actuator="joint1_motor" />
+        <actuatorfrc name="tau_sensor2" actuator="joint2_motor" />
+        <actuatorfrc name="tau_sensor3" actuator="joint3_motor" />
+        <actuatorfrc name="tau_sensor4" actuator="joint4_motor" />
+        <actuatorfrc name="tau_sensor5" actuator="joint5_motor" />
+        <actuatorfrc name="tau_sensor6" actuator="joint6_motor" />
+    </sensor>
+
+</mujocoinclude>

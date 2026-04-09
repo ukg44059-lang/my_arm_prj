@@ -1,0 +1,4 @@
+output_options:
+  compression: Zstd
+  compression_level: 22
+  force_compression: true

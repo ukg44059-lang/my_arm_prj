@@ -1,0 +1,42 @@
+<mujocoinclude>
+
+    <!-- 加载机械臂模型与基本配置 -->
+    <asset>
+        <mesh name="base_link" file="arm620/base_link.STL"/>
+        <mesh name="Link1" file="arm620/Link1.STL"/>
+        <mesh name="Link2" file="arm620/Link2.STL"/>
+        <mesh name="Link3" file="arm620/Link3.STL"/>
+        <mesh name="Link4" file="arm620/Link4.STL"/>
+        <mesh name="Link5" file="arm620/Link5.STL"/>
+        <mesh name="Link6" file="arm620/Link6.STL"/>
+    </asset>
+    <default>
+	  <default class="orz">
+	  </default>
+    </default>
+
+    <!-- 机械臂驱动 -->
+    <actuator>
+        <position joint='joint1' name='joint1' ctrllimited="true" ctrlrange="-2.9670 2.9670" kp="550"/>
+        <position joint='joint2' name='joint2' ctrllimited="true" ctrlrange="-2.9670 2.9670" kp="550"/>
+        <position joint='joint3' name='joint3' ctrllimited="true" ctrlrange="-1.5708 1.5708" kp="550"/>
+        <position joint='joint4' name='joint4' ctrllimited="true" ctrlrange="-2.9670 2.9670" kp="300"/>
+        <position joint='joint5' name='joint5' ctrllimited="true" ctrlrange="-1.5708 1.5708" kp="300"/>
+        <position joint='joint6' name='joint6' ctrllimited="true" ctrlrange="-2.9670 2.9670" kp="300"/>
+    </actuator>
+    <!-- 机械臂传感器 -->
+    <sensor>
+        <jointpos name="pos_sensor1" joint="joint1" />
+        <jointvel name="vel_sensor1" joint="joint1" />
+        <jointpos name="pos_sensor2" joint="joint2" />
+        <jointvel name="vel_sensor2" joint="joint2" />
+        <jointpos name="pos_sensor3" joint="joint3" />
+        <jointvel name="vel_sensor3" joint="joint3" />
+        <jointpos name="pos_sensor4" joint="joint4" />
+        <jointvel name="vel_sensor4" joint="joint4" />
+        <jointpos name="pos_sensor5" joint="joint5" />
+        <jointvel name="vel_sensor5" joint="joint5" />
+        <jointpos name="pos_sensor6" joint="joint6" />
+        <jointvel name="vel_sensor6" joint="joint6" />
+    </sensor>
+</mujocoinclude>

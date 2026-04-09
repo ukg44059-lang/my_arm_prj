@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<mujoco model="robot_arm_torque">
+    <compiler angle="radian" meshdir="../robot/meshes/" />
+    <size njmax="500" nconmax="100" />
+    
+    <!-- 刚性接触求解器配置 -->
+    <option cone="elliptic" impratio="10" viscosity="0.1" timestep="0.001" iterations="150" solver="Newton" tolerance="1e-10">
+        <flag contact="enable" override="enable"/>
+    </option>
+    
+    <visual>
+    <global offwidth="1280" offheight="720"/>
+    </visual>
+
+    <!-- 禁用机器人自碰撞 -->
+    <contact>
+        <exclude body1="base" body2="Link1"/>
+        <exclude body1="base" body2="Link2"/>
+        <exclude body1="base" body2="Link3"/>
+        <exclude body1="base" body2="Link4"/>
+        <exclude body1="base" body2="Link5"/>
+        <exclude body1="base" body2="Link6"/>
+        <exclude body1="Link1" body2="Link2"/>
+        <exclude body1="Link1" body2="Link3"/>
+        <exclude body1="Link2" body2="Link3"/>
+        <exclude body1="Link2" body2="Link4"/>
+        <exclude body1="Link3" body2="Link4"/>
+        <exclude body1="Link3" body2="Link5"/>
+        <exclude body1="Link4" body2="Link5"/>
+        <exclude body1="Link4" body2="Link6"/>
+        <exclude body1="Link5" body2="Link6"/>
+    </contact>
+
+    <!-- 加载环境基本配置 -->
+    <include file="env_robot_assets.xml"></include>
+
+    <!-- 加载机械臂模型与基本配置、驱动（力矩控制版本） -->
+    <include file="../robot/robot_arm/robot_arm620_torque.xml"></include>
+
+    <!-- 加载 Robotiq-2f-85 v4 夹爪与基本配置、驱动 -->
+    <include file="../robot/robot_iq/robotiq-2f-assets.xml"></include>
+
+    <!-- 加载 实验环境材料 -->
+    <include file="../env/exp_assets.xml"></include>
+
+    <!-- 加载 实验室环境材质 -->
+    <include file="../env/env_assets.xml"></include>
+
+    <!-- 机器人本体 -->
+    <worldbody>
+        <!-- 默认光照 -->
+        <light directional="true" diffuse="0.4 0.4 0.4" specular="0.08 0.08 0.08" pos="0 0 4" dir="0 0 -1"/>
+        <light directional="true" diffuse="0.24 0.24 0.24" specular="0.04 0.04 0.04" pos="0 0 5" dir="0 0 -1"/>
+
+        <!-- 加载实验室环境 -->
+        <include file="../env/env_worldbody.xml"></include>
+
+        <!-- RGBD相机 2: 固定在机器人正前方的外部观察相机 -->
+        <body name="external_camera_mount" pos="-0.8 0 1.2">
+            <camera name="rgbd_camera_external" pos="0 0 0" euler="0 -1.57079632679 -1.57079632679" fovy="70" mode="fixed"/>
+            <geom name="camera_marker" type="box" size="0.01 0.01 0.01" rgba="0 0 1 0.5"/>
+        </body>
+
+        <!-- 加载机器人运动链 -->
+        <include file="../robot/robot_arm/robot_arm620_robot_iq.xml"></include>
+
+    </worldbody>
+
+</mujoco>
